@@ -1,15 +1,17 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".Main.ContentFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Main.Fragment.HomeFragment">
+    <data>
+        <variable
+            name="vm"
+            type="com.pkl.gits.jajan.Main.Fragment.ViewModel.HomeFragmentVM"/>
+    </data>
     <LinearLayout
         android:id="@+id/content_main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        tools:context="com.pkl.gits.jajan.Main.MainActivity"
-        tools:showIn="@layout/app_bar_main"
         android:orientation="vertical">
         <ImageView
             android:layout_width="match_parent"
@@ -62,4 +64,4 @@
 
         </android.support.v7.widget.RecyclerView>
     </LinearLayout>
-</FrameLayout>
+</layout>

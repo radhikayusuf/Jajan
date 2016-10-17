@@ -16,10 +16,11 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.pkl.gits.jajan.Main.Fragment.DashboardFragment;
+import com.pkl.gits.jajan.Main.Fragment.HomeFragment;
 import com.pkl.gits.jajan.Main.ViewModel.MainActivityVM;
 import com.pkl.gits.jajan.R;
 import com.pkl.gits.jajan.databinding.ActivityMainBinding;
-import com.pkl.gits.jajan.databinding.ContentMainBinding;
 
 import id.gits.mvvmcore.activity.GitsActivity;
 
@@ -55,7 +56,7 @@ public class MainActivity extends GitsActivity<MainActivityVM, ActivityMainBindi
 
         switch (id){
             case R.id.nav_beranda :
-                fragmentClass = ContentFragment.class;
+                fragmentClass = HomeFragment.class;
                 break;
             case R.id.nav_dashboard:
                 fragmentClass = DashboardFragment.class;
@@ -69,7 +70,7 @@ public class MainActivity extends GitsActivity<MainActivityVM, ActivityMainBindi
         }
 
         FragmentManager fragmentManager = getSupportFragmentManager();
-        fragmentManager.beginTransaction().replace(R.id.content_main, fragment).commit();
+        fragmentManager.beginTransaction().replace(R.id.fragment_container, fragment).commit();
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

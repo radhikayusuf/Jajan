@@ -1,10 +1,8 @@
-package com.pkl.gits.jajan.Main.ViewModel;
+package com.pkl.gits.jajan.Main.Fragment.ViewModel;
 
 import android.content.Context;
-import android.media.Rating;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 
 import com.pkl.gits.jajan.Main.RecyclerViewSetting.BestSeller.BestSellerAdapter;
 import com.pkl.gits.jajan.Main.RecyclerViewSetting.SecondRecyclerView.SecondAdapter;
@@ -18,10 +16,12 @@ import java.util.List;
 import id.gits.mvvmcore.viewmodel.GitsVM;
 
 /**
- * Created by root on 17/10/16.
+ * Created by Varokah on 10/17/2016.
  */
 
-public class ContentMainVM extends GitsVM {
+public class HomeFragmentVM extends GitsVM{
+
+
     public BestSellerAdapter bestSellerAdapter;
     public SecondAdapter secondAdapter;
     public LinearLayoutManager linearLayoutManager;
@@ -32,7 +32,8 @@ public class ContentMainVM extends GitsVM {
     List<Diskon> diskons = new ArrayList<>();
     List<RatingReview> ratings = new ArrayList<>();
     BarangResponse barangResponse;
-    public ContentMainVM(Context context) {
+
+    public HomeFragmentVM(Context context) {
         super(context);
         linearLayoutManager = new LinearLayoutManager(mContext, LinearLayoutManager.HORIZONTAL, false);
         gridLayoutManager = new GridLayoutManager(mContext, 2);
@@ -45,17 +46,16 @@ public class ContentMainVM extends GitsVM {
         url.add("url");
         url.add("pic");
         warna.add("silver");
-        diskons.add(new Diskon("30","1","2"));
-        ratings.add(new RatingReview("4","Good","2"));
-        barangResponses.add(new BarangResponse("Sendok","15000","30","4","","Sendok Terbaik Abad ini","Logam Murni 100 Gram",url, warna,"1","5",diskons,ratings));
-        barangResponses.add(new BarangResponse("Sendok","15000","30","4","","Sendok Terbaik Abad ini","Logam Murni 100 Gram",url, warna,"1","5",diskons,ratings));
-        barangResponses.add(new BarangResponse("Sendok","15000","30","4","","Sendok Terbaik Abad ini","Logam Murni 100 Gram",url, warna,"1","5",diskons,ratings));
-        barangResponses.add(new BarangResponse("Sendok","15000","30","4","","Sendok Terbaik Abad ini","Logam Murni 100 Gram",url, warna,"1","5",diskons,ratings));
+        diskons.add(new Diskon("30", "1", "2"));
+        ratings.add(new RatingReview("4", "Good", "2"));
+        barangResponses.add(new BarangResponse("Sendok", "15000", "30", "4", "", "Sendok Terbaik Abad ini", "Logam Murni 100 Gram", url, warna, "1", "5", diskons, ratings));
+        barangResponses.add(new BarangResponse("Sendok", "15000", "30", "4", "", "Sendok Terbaik Abad ini", "Logam Murni 100 Gram", url, warna, "1", "5", diskons, ratings));
+        barangResponses.add(new BarangResponse("Sendok", "15000", "30", "4", "", "Sendok Terbaik Abad ini", "Logam Murni 100 Gram", url, warna, "1", "5", diskons, ratings));
+        barangResponses.add(new BarangResponse("Sendok", "15000", "30", "4", "", "Sendok Terbaik Abad ini", "Logam Murni 100 Gram", url, warna, "1", "5", diskons, ratings));
         //dummy data//
 
         secondAdapter.notifyDataSetChanged();
         bestSellerAdapter.notifyDataSetChanged();
-
 
 
     }
