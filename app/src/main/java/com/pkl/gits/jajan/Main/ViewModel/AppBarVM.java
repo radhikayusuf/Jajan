@@ -21,8 +21,6 @@ public class AppBarVM extends GitsVM{
     public AppBarVM(Context context) {
         super(context);
         contentMainVM = new ContentMainVM(mContext);
-
-
     }
 
 

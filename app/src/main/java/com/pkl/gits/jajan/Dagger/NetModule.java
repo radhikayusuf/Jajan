@@ -1,5 +1,8 @@
 package com.pkl.gits.jajan.Dagger;
 
+import com.pkl.gits.jajan.api.ApiInterface;
+import com.pkl.gits.jajan.api.Core.ApiClient;
+
 import javax.inject.Singleton;
 
 import dagger.Module;
@@ -10,7 +13,9 @@ import dagger.Provides;
  */
 @Module
 public class NetModule {
-//    @Singleton
-//    @Provides
-//    com.pkl.gits.jajan.ApiInterface
+    @Singleton
+    @Provides
+    ApiClient provideApiClient(){
+        return new ApiClient("example link");
+    }
 }
