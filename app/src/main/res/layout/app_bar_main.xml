@@ -15,6 +15,10 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     tools:context="com.pkl.gits.jajan.Main.MainActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -30,12 +34,13 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <include
-
-        app:vm="@{appBarVM.contentMainVM}"/>
-        <!--layout="@{appBarVM.includeLayout.equalsIgnoreCase(`pesanan saya`) ? @layout : android.R.layout.content_main}"-->
-
-
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <include
+            layout="@layout/content_main"
+            app:vm="@{appBarVM.contentMainVM}"/>
+        </ScrollView>
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"
         android:layout_width="wrap_content"
@@ -43,6 +48,6 @@
         android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/fab_margin"
         app:srcCompat="@android:drawable/ic_dialog_email" />
-
+    </LinearLayout>
 </android.support.design.widget.CoordinatorLayout>
 </layout>

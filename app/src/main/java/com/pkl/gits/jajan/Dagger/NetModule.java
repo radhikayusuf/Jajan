@@ -10,7 +10,7 @@ import dagger.Provides;
  */
 @Module
 public class NetModule {
-    @Singleton
-    @Provides
-    com.pkl.gits.jajan.ApiInterface
+//    @Singleton
+//    @Provides
+//    com.pkl.gits.jajan.ApiInterface
 }

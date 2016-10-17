@@ -8,9 +8,6 @@
             name="vm"
             type="com.pkl.gits.jajan.Main.ViewModel.ContentMainVM"/>
     </data>
-<ScrollView
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
 <LinearLayout
     android:id="@+id/content_main"
     android:layout_width="match_parent"
@@ -34,7 +31,9 @@
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        app:layoutManager="@{vm.linearLayoutManager}"
+        app:adapter="@{vm.bestSellerAdapter}">
 
     </android.support.v7.widget.RecyclerView>
 
@@ -48,7 +47,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp">
+        android:layout_marginBottom="10dp"
+        app:layoutManager="@{vm.gridLayoutManager}"
+        app:adapter="@{vm.secondAdapter}">
 
     </android.support.v7.widget.RecyclerView>
 
@@ -66,5 +67,5 @@
 
     </android.support.v7.widget.RecyclerView>
 </LinearLayout>
-</ScrollView>
+
 </layout>
