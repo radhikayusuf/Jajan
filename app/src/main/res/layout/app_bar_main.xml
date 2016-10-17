@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+        <import type="android.view.View"/>
         <variable
             name="appBarVM"
             type="com.pkl.gits.jajan.Main.ViewModel.AppBarVM"/>
@@ -29,8 +30,11 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/content_main"
-        app:contentMainVM="@{appBarVM.contentMainVM}"/>
+    <include
+
+        app:vm="@{appBarVM.contentMainVM}"/>
+        <!--layout="@{appBarVM.includeLayout.equalsIgnoreCase(`pesanan saya`) ? @layout : android.R.layout.content_main}"-->
+
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"

@@ -73,6 +73,7 @@ public class MainActivity extends GitsActivity<MainActivityVM, ActivityMainBindi
         Toolbar toolbar = (Toolbar) findViewById(getToolbarId());
         setSupportActionBar(toolbar);
 
+
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
