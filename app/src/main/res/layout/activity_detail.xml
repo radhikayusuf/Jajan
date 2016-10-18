@@ -14,7 +14,6 @@
             android:id="@+id/Content_behind"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_above="@id/btn_Buy"
             android:background="@android:color/white">
             <LinearLayout
                 android:layout_width="match_parent"
