@@ -3,10 +3,10 @@
     package="com.pkl.gits.jajan">
 
     <application
+        android:name=".Jajan"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:name=".Jajan"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
@@ -19,6 +19,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".Main.DetailBarang.DetailActivity" android:theme="@style/Theme.AppCompat.NoActionBar"></activity>
     </application>
 
 </manifest>
