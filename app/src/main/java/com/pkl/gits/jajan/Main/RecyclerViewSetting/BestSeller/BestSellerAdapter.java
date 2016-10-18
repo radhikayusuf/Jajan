@@ -3,7 +3,7 @@ package com.pkl.gits.jajan.Main.RecyclerViewSetting.BestSeller;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 
-import com.pkl.gits.jajan.Main.DetailBarang.DetailActivity;
+import com.pkl.gits.jajan.DetailBarang.DetailActivity;
 import com.pkl.gits.jajan.R;
 import com.pkl.gits.jajan.Network.api.Response.BarangResponse;
 import com.pkl.gits.jajan.databinding.RowBestSellerBinding;
