@@ -323,7 +323,6 @@
                         android:layout_height="match_parent"
                         android:src="@drawable/ic_menu_share"
                         />
-
                 </LinearLayout>
                </RelativeLayout>
         </android.support.v7.widget.Toolbar>
