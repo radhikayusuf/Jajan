@@ -1,13 +1,8 @@
-package com.pkl.gits.jajan.Category;
+package com.pkl.gits.jajan.Category.Category;
 
-import android.os.PersistableBundle;
-import android.support.annotation.IdRes;
-import android.support.annotation.LayoutRes;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 
-import com.pkl.gits.jajan.Category.ViewModel.CategoryActivityVM;
+import com.pkl.gits.jajan.Category.Category.ViewModel.CategoryActivityVM;
 import com.pkl.gits.jajan.R;
 import com.pkl.gits.jajan.databinding.ActivityCategoryBinding;
 

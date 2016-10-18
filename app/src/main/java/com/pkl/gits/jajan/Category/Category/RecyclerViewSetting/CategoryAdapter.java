@@ -1,7 +1,9 @@
-package com.pkl.gits.jajan.Category.RecyclerViewSetting;
+package com.pkl.gits.jajan.Category.Category.RecyclerViewSetting;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 
+import com.pkl.gits.jajan.Category.SubCategory.SubCategoryActivity;
 import com.pkl.gits.jajan.Network.api.Response.CategoryResponse;
 import com.pkl.gits.jajan.R;
 import com.pkl.gits.jajan.databinding.RowCategoryBinding;
@@ -37,6 +39,9 @@ public class CategoryAdapter extends GitsAdapter<CategoryResponse, CategoryRowVM
 
     @Override
     public void onRowClick(CategoryResponse data, int position) {
-
+        Intent i = new Intent(mContext, SubCategoryActivity.class);
+        i.putExtra("data",data);
+        i.putExtra("judul",data.getNama_category());
+        mContext.startActivity(i);
     }
 }

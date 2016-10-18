@@ -3,7 +3,7 @@
     <data>
         <variable
             name="vm"
-            type="com.pkl.gits.jajan.Category.RecyclerViewSetting.CategoryRowVM"/>
+            type="com.pkl.gits.jajan.Category.Category.RecyclerViewSetting.CategoryRowVM"/>
     </data>
 
 <LinearLayout

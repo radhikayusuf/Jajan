@@ -1,12 +1,10 @@
-package com.pkl.gits.jajan.Category.RecyclerViewSetting;
+package com.pkl.gits.jajan.Category.Category.RecyclerViewSetting;
 
 import android.content.Context;
 import android.databinding.ObservableField;
 
 import com.pkl.gits.jajan.Network.api.Response.CategoryResponse;
 import com.pkl.gits.jajan.databinding.RowCategoryBinding;
-
-import java.util.Observable;
 
 import id.gits.mvvmcore.viewmodel.GitsRowVM;
 

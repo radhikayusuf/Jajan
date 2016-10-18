@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="vm"
+            type="com.pkl.gits.jajan.Category.SubCategory.ViewModel.SubCategoryVM"/>
+    </data>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_sub_category"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.pkl.gits.jajan.Category.SubCategory.SubCategoryActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbar_sub_category"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true">
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar_sub_category"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:theme="@style/Base.ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        </android.support.v7.widget.Toolbar>
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_below="@id/appbar_sub_category"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layoutManager="@{vm.linearLayoutManager}"
+        app:adapter="@{vm.adapter}">
+
+    </android.support.v7.widget.RecyclerView>
+</RelativeLayout>
+</layout>

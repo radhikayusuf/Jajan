@@ -1,12 +1,13 @@
 package com.pkl.gits.jajan.Network.api.Response;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
  * Created by root on 18/10/16.
  */
 
-public class SubCategory {
+public class SubCategory implements Serializable{
     String nama_sub_category;
     List<DetailCategory> categories;
 

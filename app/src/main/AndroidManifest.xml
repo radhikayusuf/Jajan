@@ -24,7 +24,8 @@
         <activity
             android:name=".Main.DetailBarang.DetailActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
-        <activity android:name=".Category.CategoryActivity"></activity>
+        <activity android:name=".Category.Category.CategoryActivity" />
+        <activity android:name=".Category.SubCategory.SubCategoryActivity"></activity>
     </application>
 
 </manifest>
