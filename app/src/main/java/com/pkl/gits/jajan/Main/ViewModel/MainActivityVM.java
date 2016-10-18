@@ -30,6 +30,7 @@ public class MainActivityVM extends GitsVM{
     private static Context ctx;
     private DrawerLayout drawerLayout;
     private FragmentManager supportFragment;
+    private int id = R.id.nav_beranda;
 
     public MainActivityVM(Context context, NavigationView navigationView, DrawerLayout drawer, FragmentManager supportFragmentManager) {
         super(context);
@@ -39,14 +40,16 @@ public class MainActivityVM extends GitsVM{
         NavigationVM vm = new NavigationVM(mContext);
         vm.title.set("Login / Register");
 
+
         View header = navigationView.getHeaderView(0);
         NavHeaderMainBinding binding = DataBindingUtil.bind(header);
         binding.setVm(vm);
 
+
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                int id = item.getItemId();
+                id = item.getItemId();
                 Fragment fragment = null;
                 Class fragmentClass = null;
 

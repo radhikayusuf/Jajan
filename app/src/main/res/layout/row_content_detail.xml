@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="vm"
+            type="com.pkl.gits.jajan.DetailBarang.RecycleView.RecycleViewUp.DetailRowUpVM"/>
+    </data>
+    <RelativeLayout
+        android:layout_width="70dp"
+        android:layout_height="70dp">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="@{vm.content}"
+            android:background="@drawable/bg_content_border"
+            android:textColor="#283593"
+            app:rowStatus="@{vm.status}"/>
+    </RelativeLayout>
+</layout>
