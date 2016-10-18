@@ -24,8 +24,7 @@ import com.pkl.gits.jajan.databinding.ActivityMainBinding;
 
 import id.gits.mvvmcore.activity.GitsActivity;
 
-public class MainActivity extends GitsActivity<MainActivityVM, ActivityMainBinding>
-        implements NavigationView.OnNavigationItemSelectedListener{
+public class MainActivity extends GitsActivity<MainActivityVM, ActivityMainBinding> {
 
     @Override
     protected int getToolbarId() {
@@ -39,59 +38,7 @@ public class MainActivity extends GitsActivity<MainActivityVM, ActivityMainBindi
 
     @Override
     public MainActivityVM getViewModel() {
-        return new MainActivityVM(this);
-    }
-
-    @Override
-    public void bindViewModel(ActivityMainBinding binding, MainActivityVM viewModel) {
-        binding.setVm(viewModel);
-    }
-
-    @Override
-    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-        int id = item.getItemId();
-        Fragment fragment = null;
-        Class fragmentClass = null;
-
-
-        switch (id){
-            case R.id.nav_beranda :
-                fragmentClass = HomeFragment.class;
-                break;
-            case R.id.nav_dashboard:
-                fragmentClass = DashboardFragment.class;
-                break;
-        }
-
-        try {
-            fragment = (Fragment) fragmentClass.newInstance();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        fragmentManager.beginTransaction().replace(R.id.fragment_container, fragment).commit();
-
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        drawer.closeDrawer(GravityCompat.START);
-        return true;
-    }
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        Toolbar toolbar = (Toolbar) findViewById(getToolbarId());
-        setSupportActionBar(toolbar);
-
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -100,7 +47,13 @@ public class MainActivity extends GitsActivity<MainActivityVM, ActivityMainBindi
         toggle.syncState();
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);
+
+        return new MainActivityVM(this, navigationView, drawer, getSupportFragmentManager());
+    }
+
+    @Override
+    public void bindViewModel(ActivityMainBinding binding, MainActivityVM viewModel) {
+        binding.setVm(viewModel);
     }
 
     @Override
@@ -116,7 +69,7 @@ public class MainActivity extends GitsActivity<MainActivityVM, ActivityMainBindi
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
+        //        getMenuInflater().inflate(R.menu.main, menu);
         return true;
     }
 
