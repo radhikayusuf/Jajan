@@ -13,9 +13,10 @@
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
         android:orientation="vertical">
-        <ImageView
+        <com.daimajia.slider.library.SliderLayout
             android:layout_width="match_parent"
-            android:layout_height="150dp"/>
+            android:layout_height="200dp"
+            app:setBackground="@{vm.url_slide}"/>
 
         <TextView
             android:layout_width="match_parent"

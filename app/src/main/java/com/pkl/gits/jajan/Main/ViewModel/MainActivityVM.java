@@ -3,9 +3,11 @@ package com.pkl.gits.jajan.Main.ViewModel;
 import android.app.Activity;
 import android.content.Context;
 import android.databinding.DataBindingUtil;
+import android.support.v4.widget.DrawerLayout;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 
+import com.pkl.gits.jajan.Main.Navigation.ViewModel.NavigationVM;
 import com.pkl.gits.jajan.Main.RecyclerViewSetting.BestSeller.BestSellerAdapter;
 import com.pkl.gits.jajan.Main.RecyclerViewSetting.SecondRecyclerView.SecondAdapter;
 import com.pkl.gits.jajan.R;
