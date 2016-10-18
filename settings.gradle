@@ -1,1 +1,1 @@
-include ':app', ':jajan_api'
+include ':app'
