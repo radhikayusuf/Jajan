@@ -1,9 +1,11 @@
 package com.pkl.gits.jajan.Main.RecyclerViewSetting.BestSeller;
 
+import android.content.Intent;
 import android.databinding.ViewDataBinding;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 
+import com.pkl.gits.jajan.Main.DetailBarang.DetailActivity;
 import com.pkl.gits.jajan.R;
 import com.pkl.gits.jajan.api.Response.BarangResponse;
 import com.pkl.gits.jajan.databinding.RowBestSellerBinding;
@@ -40,6 +42,7 @@ public class BestSellerAdapter extends GitsAdapter<BarangResponse,BestSellerRowV
 
     @Override
     public void onRowClick(BarangResponse data, int position) {
-
+        Intent in = new Intent(mContext, DetailActivity.class);
+        mContext.startActivity(in);
     }
 }
