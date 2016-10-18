@@ -1,4 +1,4 @@
-package com.pkl.gits.jajan.Dagger;
+package com.pkl.gits.jajan.Network.Dagger;
 
 import android.app.Application;
 

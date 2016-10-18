@@ -10,9 +10,9 @@ import com.daimajia.slider.library.SliderTypes.BaseSliderView;
 import com.daimajia.slider.library.SliderTypes.TextSliderView;
 import com.pkl.gits.jajan.Main.RecyclerViewSetting.BestSeller.BestSellerAdapter;
 import com.pkl.gits.jajan.Main.RecyclerViewSetting.SecondRecyclerView.SecondAdapter;
-import com.pkl.gits.jajan.api.Response.BarangResponse;
-import com.pkl.gits.jajan.api.Response.Diskon;
-import com.pkl.gits.jajan.api.Response.RatingReview;
+import com.pkl.gits.jajan.Network.api.Response.BarangResponse;
+import com.pkl.gits.jajan.Network.api.Response.Diskon;
+import com.pkl.gits.jajan.Network.api.Response.RatingReview;
 
 import java.util.ArrayList;
 import java.util.HashMap;

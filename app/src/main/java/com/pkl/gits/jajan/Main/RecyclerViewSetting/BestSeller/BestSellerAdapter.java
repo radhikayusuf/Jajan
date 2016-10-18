@@ -1,19 +1,16 @@
 package com.pkl.gits.jajan.Main.RecyclerViewSetting.BestSeller;
 
 import android.content.Intent;
-import android.databinding.ViewDataBinding;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.RecyclerView;
 
 import com.pkl.gits.jajan.Main.DetailBarang.DetailActivity;
 import com.pkl.gits.jajan.R;
-import com.pkl.gits.jajan.api.Response.BarangResponse;
+import com.pkl.gits.jajan.Network.api.Response.BarangResponse;
 import com.pkl.gits.jajan.databinding.RowBestSellerBinding;
 
 import java.util.List;
 
 import id.gits.mvvmcore.adapter.GitsAdapter;
-import id.gits.mvvmcore.viewmodel.GitsRowVM;
 
 /**
  * Created by root on 17/10/16.

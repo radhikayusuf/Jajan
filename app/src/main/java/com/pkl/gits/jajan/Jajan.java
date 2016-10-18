@@ -2,7 +2,7 @@ package com.pkl.gits.jajan;
 
 import android.app.Application;
 
-import com.pkl.gits.jajan.Dagger.Injector;
+import com.pkl.gits.jajan.Network.Dagger.Injector;
 
 /**
  * Created by root on 17/10/16.

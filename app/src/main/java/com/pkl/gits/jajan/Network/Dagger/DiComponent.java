@@ -1,13 +1,11 @@
-package com.pkl.gits.jajan.Dagger;
+package com.pkl.gits.jajan.Network.Dagger;
 
-import com.pkl.gits.jajan.Main.MainActivity;
 import com.pkl.gits.jajan.Main.ViewModel.MainActivityVM;
-import com.pkl.gits.jajan.api.Core.ApiClient;
+import com.pkl.gits.jajan.Network.api.Core.ApiClient;
 
 import javax.inject.Singleton;
 
 import dagger.Component;
-import dagger.Module;
 
 /**
  * Created by Varokah on 10/17/2016.

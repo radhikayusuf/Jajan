@@ -1,7 +1,6 @@
-package com.pkl.gits.jajan.Dagger;
+package com.pkl.gits.jajan.Network.Dagger;
 
-import com.pkl.gits.jajan.api.ApiInterface;
-import com.pkl.gits.jajan.api.Core.ApiClient;
+import com.pkl.gits.jajan.Network.api.Core.ApiClient;
 
 import javax.inject.Singleton;
 

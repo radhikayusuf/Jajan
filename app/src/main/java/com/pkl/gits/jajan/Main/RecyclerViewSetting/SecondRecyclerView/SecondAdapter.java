@@ -3,7 +3,7 @@ package com.pkl.gits.jajan.Main.RecyclerViewSetting.SecondRecyclerView;
 import android.support.v7.app.AppCompatActivity;
 
 import com.pkl.gits.jajan.R;
-import com.pkl.gits.jajan.api.Response.BarangResponse;
+import com.pkl.gits.jajan.Network.api.Response.BarangResponse;
 import com.pkl.gits.jajan.databinding.RowSecondCategoryBinding;
 
 import java.util.List;

@@ -1,10 +1,8 @@
 package com.pkl.gits.jajan.Main.RecyclerViewSetting.BestSeller;
 
 import android.content.Context;
-import android.databinding.ViewDataBinding;
-import android.nfc.tech.NfcA;
 
-import com.pkl.gits.jajan.api.Response.BarangResponse;
+import com.pkl.gits.jajan.Network.api.Response.BarangResponse;
 import com.pkl.gits.jajan.databinding.RowBestSellerBinding;
 
 import id.gits.mvvmcore.viewmodel.GitsRowVM;

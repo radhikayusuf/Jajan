@@ -1,4 +1,4 @@
-package com.pkl.gits.jajan.api.Response;
+package com.pkl.gits.jajan.Network.api.Response;
 
 /**
  * Created by Varokah on 10/17/2016.

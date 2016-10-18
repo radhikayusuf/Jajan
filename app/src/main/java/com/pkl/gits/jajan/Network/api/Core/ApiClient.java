@@ -1,6 +1,6 @@
-package com.pkl.gits.jajan.api.Core;
+package com.pkl.gits.jajan.Network.api.Core;
 
-import com.pkl.gits.jajan.api.ApiInterface;
+import com.pkl.gits.jajan.Network.api.ApiInterface;
 
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;

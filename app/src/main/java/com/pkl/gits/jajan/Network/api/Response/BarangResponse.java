@@ -1,4 +1,4 @@
-package com.pkl.gits.jajan.api.Response;
+package com.pkl.gits.jajan.Network.api.Response;
 
 
 import java.util.List;

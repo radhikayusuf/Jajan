@@ -1,6 +1,6 @@
-package com.pkl.gits.jajan.api;
+package com.pkl.gits.jajan.Network.api;
 
-import com.pkl.gits.jajan.api.Response.BarangResponse;
+import com.pkl.gits.jajan.Network.api.Response.BarangResponse;
 
 import retrofit2.http.GET;
 import rx.Observable;
