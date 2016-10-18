@@ -79,7 +79,5 @@ public class HomeFragmentVM extends GitsVM{
 
             background.addSlider(textSliderView);
         }
-
-
     }
 }

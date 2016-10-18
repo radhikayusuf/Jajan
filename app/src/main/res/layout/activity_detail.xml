@@ -5,7 +5,7 @@
 <data>
     <variable
         name="vm"
-        type="com.pkl.gits.jajan.Main.DetailBarang.ViewModel.DetailVM"/>
+        type="com.pkl.gits.jajan.DetailBarang.ViewModel.DetailVM"/>
 </data>
     <android.support.design.widget.CoordinatorLayout
         android:layout_width="match_parent"
@@ -33,7 +33,7 @@
                         <ImageView
                             android:layout_width="50dp"
                             android:layout_height="match_parent"
-                            android:src="@drawable/ic_menu_share"
+                            android:src="@drawable/ic_shopping_cart_black_24dp"
                             />
                     </LinearLayout>
                    </RelativeLayout>
@@ -56,7 +56,8 @@
                 android:orientation="vertical">
                 <com.daimajia.slider.library.SliderLayout
                     android:layout_width="match_parent"
-                    android:layout_height="300dp"/>
+                    android:layout_height="350dp"
+                    app:setBackground = "@{vm.url_img}"/>
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -64,14 +65,16 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        tools:text="Nama Barang" />
+                        android:text="Nama Barang"
+                        android:textSize="24sp"/>
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal">
                         <RatingBar
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent" />
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            style="?attr/ratingBarStyleSmall"/>
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -87,14 +90,15 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
                     <LinearLayout
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
+                        android:layout_weight="3"
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="Rp 0"
-                            android:textSize="18sp"
+                            android:textSize="20sp"
                             android:textColor="@android:color/holo_red_light"/>
                         <TextView
                             android:layout_width="match_parent"
@@ -104,12 +108,16 @@
                     </LinearLayout>
                     <TextView
                         android:layout_width="wrap_content"
+                        android:layout_weight="1"
                         android:layout_height="match_parent"
-                        android:layout_gravity="left"
                         android:text="0%"
+                        android:textColor="@android:color/white"
+                        android:textSize="18dp"
+                        android:gravity="center"
                         android:background="@android:color/holo_orange_light"
-                        />
+                        android:layout_alignParentRight="true" />
                 </LinearLayout>
+
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
@@ -125,7 +133,8 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Warna "/>
+                            android:text="Warna "
+                            android:textSize="16dp"/>
                         <android.support.v7.widget.RecyclerView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
@@ -138,7 +147,8 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Warna "/>
+                            android:text="Warna "
+                            android:textSize="16dp"/>
                         <android.support.v7.widget.RecyclerView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
@@ -147,7 +157,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:gravity="left"
+                        android:gravity="right"
                         android:text="Stok tersedia(0)"/>
                 </LinearLayout>
                 <View
@@ -160,20 +170,39 @@
                     android:orientation="horizontal">
                     <TextView
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Jumlah"/>
-                    <Button
-                        android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:text="-"/>
-                    <TextView
+                        android:layout_weight="1"
+                        android:text="Jumlah"
+                        android:gravity="center_vertical"
+                        android:textSize="18sp"/>
+                    <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="1"/>
-                    <Button
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:text="+"/>
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+                        <Button
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_weight="1"
+                            android:background="#283593"
+                            android:textColor="@android:color/white"
+                            android:text="-"/>
+                        <EditText
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_weight="1"
+                            android:inputType="number"
+                            android:lines="1"
+                            android:text="1"
+                            android:gravity="center"/>
+                        <Button
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_weight="1"
+                            android:background="#283593"
+                            android:textColor="@android:color/white"
+                            android:text="+"/>
+                    </LinearLayout>
                 </LinearLayout>
                 <View
                     android:layout_width="match_parent"
@@ -190,7 +219,7 @@
                     <TextView
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:gravity="left"
+                        android:gravity="right"
                         android:text="tidak tersedia cicilan"/>
                 </LinearLayout>
                 <View
@@ -208,8 +237,9 @@
                     <TextView
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:gravity="left"
-                        android:text="Hitung"/>
+                        android:gravity="right"
+                        android:text="Hitung"
+                        android:textColor="@android:color/holo_red_light"/>
                 </LinearLayout>
                 <View
                     android:layout_width="match_parent"
@@ -230,7 +260,7 @@
                         <TextView
                             android:layout_width="fill_parent"
                             android:layout_height="wrap_content"
-                            android:gravity="left"
+                            android:gravity="right"
                             android:text="desa,kab,kota"/>
                     </LinearLayout>
                     <LinearLayout
@@ -244,7 +274,7 @@
                         <TextView
                             android:layout_width="fill_parent"
                             android:layout_height="wrap_content"
-                            android:gravity="left"
+                            android:gravity="right"
                             android:text="Rp 0"/>
                     </LinearLayout>
                     <LinearLayout
@@ -258,7 +288,7 @@
                         <TextView
                             android:layout_width="fill_parent"
                             android:layout_height="wrap_content"
-                            android:gravity="left"
+                            android:gravity="right"
                             android:text="0 Days"/>
                     </LinearLayout>
                 </LinearLayout>
@@ -280,13 +310,17 @@
                         android:orientation="horizontal">
                         <RatingBar
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" />
+                            android:layout_height="match_parent"
+                            android:layout_weight="7"
+                            style="?attr/ratingBarStyleSmall"/>
                         <TextView
-                            android:layout_width="fill_parent"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:gravity="left"
+                            android:layout_weight="1"
+                            android:gravity="right|center_vertical"
                             android:text="Login terakhir"
-                            android:drawableRight="@drawable/android"
+                            android:drawingCacheQuality="low"
+                            android:drawableLeft="@drawable/ic_history_black_24dp"
                             />
                     </LinearLayout>
                     <LinearLayout
@@ -294,13 +328,15 @@
                         android:layout_height="wrap_content"
                         android:orientation="horizontal">
                         <TextView
+                            android:layout_weight="5"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Kota"/>
                         <TextView
-                            android:layout_width="fill_parent"
+                            android:layout_weight="1"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:gravity="left"
+                            android:gravity="right|center_vertical"
                             android:text="1 hours ago"
                             />
                     </LinearLayout>
@@ -317,33 +353,39 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:background="@android:color/white"
                         android:text="Deskripsi"/>
                     <Button
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:background="@android:color/white"
                         android:text="Spesifikasi"/>
                     <Button
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="Review and Rating"/>
+                        android:background="@android:color/white"
+                        android:text="Review &amp; Rating"
+                        android:lines="2"/>
                 </LinearLayout>
                 <FrameLayout
                     android:id="@+id/frame_desc"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@android:color/white"></FrameLayout>
+                    android:background="@android:color/white">
+                </FrameLayout>
             </LinearLayout>
         </ScrollView>
-        <Button
-            android:id="@+id/btn_Buy"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:background="@android:color/holo_red_light"
-            android:layout_gravity="bottom|end"
-            android:text="TAMBAH KE TROLI"/>
+
+            <Button
+                android:id="@+id/btn_Buy"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:background="@android:color/holo_red_light"
+                android:layout_gravity="bottom|end"
+                android:text="TAMBAH KE TROLI"/>
         </LinearLayout>
     </android.support.design.widget.CoordinatorLayout>
 </layout>
