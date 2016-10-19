@@ -24,11 +24,12 @@ public class SubCategoryVM extends GitsVM {
     public LinearLayoutManager linearLayoutManager;
     List<SubCategory> subCategories = new ArrayList<>();
 
-    public SubCategoryVM(Context context, CategoryResponse response) {
+    public SubCategoryVM(Context context, CategoryResponse response, String title) {
         super(context);
         adapter = new SubCategoryAdapter(subCategories);
         linearLayoutManager = new LinearLayoutManager(mContext);
         subCategories.addAll(response.getSubCategory());
+        subCategories.add(0, new SubCategory("Semua "+title, null));
         adapter.notifyDataSetChanged();
     }
 }

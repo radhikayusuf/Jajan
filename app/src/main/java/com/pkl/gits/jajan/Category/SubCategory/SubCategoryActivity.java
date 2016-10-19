@@ -26,15 +26,14 @@ public class SubCategoryActivity extends GitsActivity<SubCategoryVM, ActivitySub
 
     @Override
     public SubCategoryVM getViewModel() {
-        Intent i = getIntent();
+         Intent i = getIntent();
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_sub_category);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle(i.getStringExtra("judul"));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
-
-        return new SubCategoryVM(this, (CategoryResponse) i.getSerializableExtra("data"));
+    return new SubCategoryVM(this, (CategoryResponse) i.getSerializableExtra("data"), i.getStringExtra("judul"));
     }
 
     @Override

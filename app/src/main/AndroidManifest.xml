@@ -25,7 +25,9 @@
             android:name=".DetailBarang.DetailActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity android:name=".Category.Category.CategoryActivity" />
-        <activity android:name=".Category.SubCategory.SubCategoryActivity"></activity>
+        <activity android:name=".Category.SubCategory.SubCategoryActivity" />
+        <activity android:name=".Category.DetailCategory.DetailCategoryActivity" />
+        <activity android:name=".ListProduk.ListProdukActivity"></activity>
     </application>
 
 </manifest>
