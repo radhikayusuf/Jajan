@@ -3,6 +3,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <data>
+        <import type="android.view.View"/>
+        <variable
+            name="obsCon"
+            type="com.pkl.gits.jajan.DetailBarang.ObserverDao.DetailContentObserverDao"/>
+        <variable
+            name="obsPeng"
+            type="com.pkl.gits.jajan.DetailBarang.ObserverDao.DetailPengirimanObserverDao"/>
+        <variable
+            name="obsToko"
+            type="com.pkl.gits.jajan.DetailBarang.ObserverDao.DetailTokoObserverDao"/>
         <variable
             name="vm"
             type="com.pkl.gits.jajan.DetailBarang.ViewModel.DetailVM"/>
@@ -70,7 +80,7 @@
                             android:padding="5dp"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Nama Barang"
+                            android:text="@{vm.detailContentObserverDao.detailBarangNama}"
                             android:textColor="@android:color/black"
                             android:textSize="24sp"/>
                         <LinearLayout
@@ -82,11 +92,11 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 style="?attr/ratingBarStyleSmall"
-                                android:rating="4"/>
+                                android:rating="@{Float.parseFloat(vm.detailContentObserverDao.detailBarangRating)}"/>
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="(0)"
+                                android:text="@{`(`+vm.detailContentObserverDao.detailBarangTotalRating+`)`}"
                                 android:textColor="#000"/>
                         </LinearLayout>
                     </LinearLayout>
@@ -110,7 +120,7 @@
                                 android:paddingRight="5dp"
                                 android:paddingTop="5dp"
                                 android:paddingBottom="5dp"
-                                android:text="Rp 0"
+                                android:text="@{`Rp `+vm.detailContentObserverDao.detailBarangTotalHarga}"
                                 android:textSize="20sp"
                                 android:textColor="@android:color/holo_red_light"/>
                             <TextView
@@ -119,7 +129,7 @@
                                 android:paddingBottom="5dp"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="Rp 0"
+                                android:text="@{`Rp `+vm.detailContentObserverDao.detailBarangDiscHarga}"
                                 android:textColor="#000"
                                 android:textSize="14sp" />
                         </LinearLayout>
@@ -127,7 +137,7 @@
                             android:layout_width="wrap_content"
                             android:layout_weight="1"
                             android:layout_height="match_parent"
-                            android:text="0%"
+                            android:text="@{vm.detailContentObserverDao.detailBarangDiscount+` %`}"
                             android:textColor="@android:color/white"
                             android:textSize="18dp"
                             android:gravity="center"
@@ -150,7 +160,7 @@
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="Warna "
+                                android:text="@{`Warna : `+vm.detailContentObserverDao.detailCategoryUp}"
                                 android:padding="5dp"
                                 android:textSize="16dp"
                                 android:textColor="#000"/>
@@ -170,7 +180,7 @@
                                 android:padding="5dp"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="Size"
+                                android:text="@{`Size :`+vm.detailContentObserverDao.detailCategoryDown}"
                                 android:textColor="#000"
                                 android:textSize="16dp"/>
                             <android.support.v7.widget.RecyclerView
@@ -187,7 +197,7 @@
                             android:layout_height="wrap_content"
                             android:gravity="right"
                             android:textColor="#000"
-                            android:text="Stok tersedia(0)"/>
+                            android:text="@{`Stock Tersedia (`+Integer.parseInt(vm.detailContentObserverDao.detailBarangStok)+`)`}"/>
                     </LinearLayout>
                     <View
                         android:layout_width="match_parent"
@@ -217,7 +227,8 @@
                                 android:layout_weight="1"
                                 android:background="#283593"
                                 android:textColor="@android:color/white"
-                                android:text="-"/>
+                                android:text="-"
+                                android:onClick="@{()->vm.onClickMins()}"/>
                             <EditText
                                 android:layout_width="50dp"
                                 android:layout_height="50dp"
@@ -225,13 +236,14 @@
                                 android:inputType="number"
                                 android:textColor="#000"
                                 android:lines="1"
-                                android:text="1"
+                                android:text="@={vm.detailContentObserverDao.detailBarangJumlah}"
                                 android:gravity="center"/>
                             <Button
                                 android:layout_width="50dp"
                                 android:layout_height="50dp"
                                 android:layout_weight="1"
                                 android:background="#283593"
+                                android:onClick="@{()->vm.onClickPlus()}"
                                 android:textColor="@android:color/white"
                                 android:text="+"/>
                         </LinearLayout>
@@ -255,7 +267,7 @@
                             android:layout_height="wrap_content"
                             android:gravity="right"
                             android:textColor="#000"
-                            android:text="tidak tersedia cicilan"/>
+                            android:text='@{vm.detailContentObserverDao.detailBarangCicilan.equalsIgnoreCase("")?`Cicilan tidak tersedia` : vm.detailContentObserverDao.detailBarangCicilan}'/>
                     </LinearLayout>
                     <View
                         android:layout_width="match_parent"
@@ -302,7 +314,7 @@
                                 android:layout_height="wrap_content"
                                 android:textColor="#000"
                                 android:gravity="right"
-                                android:text="desa,kab,kota"/>
+                                android:text="@{vm.detailPengirimanObserverDao.detailPengirimanKecamatan+` , `+vm.detailPengirimanObserverDao.detailPengirimanKota+` , `+vm.detailPengirimanObserverDao.detailPengirimanProvinsi}"/>
                         </LinearLayout>
                         <LinearLayout
                             android:padding="3dp"
@@ -313,13 +325,13 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:textColor="#000"
-                                android:text="biaya"/>
+                                android:text="Biaya"/>
                             <TextView
                                 android:layout_width="fill_parent"
                                 android:layout_height="wrap_content"
                                 android:textColor="#000"
                                 android:gravity="right"
-                                android:text="Rp 0"/>
+                                android:text="@{`Rp `+vm.detailPengirimanObserverDao.detailPengirimanBiaya}"/>
                         </LinearLayout>
                         <LinearLayout
                             android:padding="3dp"
@@ -336,7 +348,7 @@
                                 android:layout_height="wrap_content"
                                 android:textColor="#000"
                                 android:gravity="right"
-                                android:text="0 Days"/>
+                                android:text="@{vm.detailPengirimanObserverDao.detailPengirimanWaktu+` days`}"/>
                         </LinearLayout>
                     </LinearLayout>
                     <View
@@ -353,7 +365,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:textColor="#000"
-                            android:text="Nama Toko"
+                            android:text="@{vm.detailTokoObserverDao.detailTokoNama}"
                             android:textSize="24sp"
                             android:id="@+id/textView" />
 
@@ -370,7 +382,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     style="?attr/ratingBarStyleSmall"
-                                    android:rating="4"/>
+                                    android:rating="@{Float.parseFloat(vm.detailTokoObserverDao.detailTokoRating)}"/>
                             </RelativeLayout>
                             <TextView
                                 android:layout_width="wrap_content"
@@ -392,14 +404,14 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:textColor="#000"
-                                android:text="Kota"/>
+                                android:text="@{vm.detailTokoObserverDao.detailTokoKota}"/>
                             <TextView
                                 android:layout_weight="1"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:textColor="#000"
                                 android:gravity="right|center_vertical"
-                                android:text="1 hours ago"
+                                android:text="@{vm.detailTokoObserverDao.detailTokoLastLogin}"
                                 />
                         </LinearLayout>
                     </LinearLayout>

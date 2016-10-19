@@ -3,11 +3,15 @@ package com.pkl.gits.jajan.DetailBarang.ViewModel;
 import android.content.Context;
 import android.databinding.BindingAdapter;
 import android.support.v7.widget.LinearLayoutManager;
+import android.widget.Button;
 import android.widget.LinearLayout;
 
 import com.daimajia.slider.library.SliderLayout;
 import com.daimajia.slider.library.SliderTypes.BaseSliderView;
 import com.daimajia.slider.library.SliderTypes.TextSliderView;
+import com.pkl.gits.jajan.DetailBarang.ObserverDao.DetailContentObserverDao;
+import com.pkl.gits.jajan.DetailBarang.ObserverDao.DetailPengirimanObserverDao;
+import com.pkl.gits.jajan.DetailBarang.ObserverDao.DetailTokoObserverDao;
 import com.pkl.gits.jajan.DetailBarang.RecycleView.Dao.RowDao;
 import com.pkl.gits.jajan.DetailBarang.RecycleView.RecycleViewDown.DetailDownAdapter;
 import com.pkl.gits.jajan.DetailBarang.RecycleView.RecycleViewUp.DetailUpAdapter;
@@ -29,6 +33,10 @@ public class DetailVM extends GitsVM {
     public DetailUpAdapter detailUpAdapter;
     public LinearLayoutManager layoutManager;
     public LinearLayoutManager layoutManagerDown;
+    public DetailContentObserverDao detailContentObserverDao = new DetailContentObserverDao("","","","","","","","","","","");
+    public DetailPengirimanObserverDao detailPengirimanObserverDao = new DetailPengirimanObserverDao("","","","","");
+    public DetailTokoObserverDao detailTokoObserverDao = new DetailTokoObserverDao("","","","");
+
 
     public List<RowDao> dataup = new ArrayList<>();
     public List<RowDao> datadown = new ArrayList<>();
@@ -54,6 +62,30 @@ public class DetailVM extends GitsVM {
         datadown.add(new RowDao("XL","0"));
         datadown.add(new RowDao("S","0"));
 
+
+        detailContentObserverDao.setDetailBarangNama("AQUDES");
+        detailContentObserverDao.setDetailBarangJumlah("1");
+        detailContentObserverDao.setDetailBarangCicilan("");
+        detailContentObserverDao.setDetailBarangDiscHarga("100.000.000");
+        detailContentObserverDao.setDetailBarangRating("4");
+        detailContentObserverDao.setDetailBarangStok("90");
+        detailContentObserverDao.setDetailBarangTotalHarga("110.000.000");
+        detailContentObserverDao.setDetailBarangTotalRating("200");
+        detailContentObserverDao.setDetailCategoryDown("");
+        detailContentObserverDao.setDetailCategoryUp("");
+        detailContentObserverDao.setDetailBarangDiscount("0");
+
+        detailPengirimanObserverDao.setDetailPengirimanKecamatan("paparapat");
+        detailPengirimanObserverDao.setDetailPengirimanKota("BalikBatu");
+        detailPengirimanObserverDao.setDetailPengirimanProvinsi("Kalimantan Utara");
+        detailPengirimanObserverDao.setDetailPengirimanBiaya("0");
+        detailPengirimanObserverDao.setDetailPengirimanWaktu("90");
+
+        detailTokoObserverDao.setDetailTokoNama("Anti-Mainstream");
+        detailTokoObserverDao.setDetailTokoKota("Kota Baru");
+        detailTokoObserverDao.setDetailTokoLastLogin("1920");
+        detailTokoObserverDao.setDetailTokoRating("1");
+
         detailDownAdapter.notifyDataSetChanged();
         detailUpAdapter.notifyDataSetChanged();
     }
@@ -73,5 +105,24 @@ public class DetailVM extends GitsVM {
         }
 
 
+    }
+
+    public void onClickPlus(){
+        int before = Integer.parseInt(detailContentObserverDao.getDetailBarangJumlah());
+        before++;
+        String after = String.valueOf(before);
+        detailContentObserverDao.setDetailBarangJumlah(after);
+    }
+
+    public void onClickMins(){
+        int before = Integer.parseInt(detailContentObserverDao.getDetailBarangJumlah());
+        String after;
+        if(before > 1){
+            before--;
+            after = String.valueOf(before);
+        }else{
+            after = String.valueOf(1);
+        }
+        detailContentObserverDao.setDetailBarangJumlah(after);
     }
 }
