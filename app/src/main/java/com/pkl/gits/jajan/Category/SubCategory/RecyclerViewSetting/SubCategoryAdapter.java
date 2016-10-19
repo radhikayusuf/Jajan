@@ -1,9 +1,12 @@
 package com.pkl.gits.jajan.Category.SubCategory.RecyclerViewSetting;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 
+import com.pkl.gits.jajan.Category.DetailCategory.DetailCategoryActivity;
 import com.pkl.gits.jajan.Category.SubCategory.ViewModel.SubCategoryVM;
+import com.pkl.gits.jajan.ListProduk.ListProdukActivity;
 import com.pkl.gits.jajan.Network.api.Response.SubCategory;
 import com.pkl.gits.jajan.R;
 import com.pkl.gits.jajan.databinding.ActivitySubCategoryBinding;
@@ -41,6 +44,9 @@ public class SubCategoryAdapter extends GitsAdapter<SubCategory, SubCategoryRowV
 
     @Override
     public void onRowClick(SubCategory data, int position) {
-
+        Intent i = new Intent(mContext, data.getCategories() == null ? ListProdukActivity.class : DetailCategoryActivity.class);
+        i.putExtra("data", data);
+        i.putExtra("title", data.getNama_sub_category());
+        mContext.startActivity(i);
     }
 }
